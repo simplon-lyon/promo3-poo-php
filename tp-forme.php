@@ -2,6 +2,7 @@
     //On include nos classes
     include_once './Carre.php';
     include_once './Point.php';
+    include_once './Cercle.php';
     //On crée une instance de Carre
     $carreRouge = new Carre(50, 'red');
     //On affiche sa superficie et le carré
@@ -15,4 +16,10 @@
     echo $pointB->afficher();
     //On calcule la distance entre les deux points
     echo $pointA->distanceFrom($pointB);
+    //On crée une nouvelle instance de cercle en lui
+    //donnant une de nos instances de point en argument
+    $cercle = new Cercle(50, $pointB);
+    //On affiche le cercle
+    echo $cercle->afficher();
+    
     

@@ -43,6 +43,16 @@ class Point {
         return sqrt(pow($point->top-$this->top, 2) 
                 + pow($point->left-$this->left, 2));
     }
+    
+    function getTop() {
+        return $this->top;
+    }
+
+    function getLeft() {
+        return $this->left;
+    }
+
+
        
 
 }
