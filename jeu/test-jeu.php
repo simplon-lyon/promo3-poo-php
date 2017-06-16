@@ -20,12 +20,20 @@ if (isset($_SESSION['perso1'])
     $perso1 = new Personnage(100, 20, 'Perso1', 30);
     $perso2 = new Personnage(140, 15, 'Perso2', 25);
 }
-$perso1->attaquer($perso2);
-$perso1->defendre();
-
-$perso2->defendre();
-$perso2->attaquer($perso1);
-
+//Si on reçoit du POST une clef attaque, c'est que le btn
+//attaque a été cliqué, donc on déclenche l'attaque d'un
+//de nos persos
+if(isset($_POST['attaque'])){
+    $perso1->attaquer($perso2);
+}
+//Si par contre on reçoit defense, alors c'est que le btn
+//defense a été cliqué, donc on déclenche la défense du perso
+if(isset($_POST['defense'])){
+    $perso1->defendre();
+}
+//Bien faire en sorte de générer le html APRÈS la résolution
+//des actions, sinon il y aura un décalage entre l'action
+//cliqué et l'affichage de ses conséquences
 echo $perso1->genererHTML();
 echo $perso2->genererHTML();
 
@@ -33,5 +41,12 @@ echo $perso2->genererHTML();
 $_SESSION['perso1'] =$perso1;
 $_SESSION['perso2'] = $perso2;
 
-
-
+?>
+<!--On peut mettre le formulaire où on le souhaite vu que
+de toute façon, les conséquences du formulaire n'arriveront
+qu'une fois la page rechargée, et donc le script php
+ complétement re-exécuté -->
+<form method="POST">
+    <button name="attaque">Attaquer</button>
+    <button name="defense">Défendre</button>
+</form>
