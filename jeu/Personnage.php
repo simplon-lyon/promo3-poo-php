@@ -13,11 +13,11 @@
  */
 class Personnage {
 
-    private $vie;
-    private $defense;
-    private $nom;
-    private $force;
-    
+    protected $vie;
+    protected $defense;
+    protected $nom;
+    protected $force;
+            
     function __construct(int $vie, 
             int $defense, 
             string $nom, 

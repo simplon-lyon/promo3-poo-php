@@ -1,6 +1,8 @@
 <?php
 
 include_once './Personnage.php';
+include_once './Soigneur.php';
+
 session_start();
 //On vérifie s'il y a les persos actuellement stockés en 
 //session
@@ -17,7 +19,7 @@ if (isset($_SESSION['perso1'])
     /*
      * On crée 2 instances différentes de la classe Personnage
      */
-    $perso1 = new Personnage(100, 20, 'Perso1', 30);
+    $perso1 = new Soigneur(100, 20, 'Perso1', 30);
     $perso2 = new Personnage(140, 15, 'Perso2', 25);
 }
 //Si on reçoit du POST une clef attaque, c'est que le btn
