@@ -17,6 +17,6 @@
  */
 class RobotMenager extends Robot{
     public function faireMenage() {
-        return  "je fais le ménage bip boup bip";
+        return  "je passe l'aspirateur bip boup bip";
     }
 }

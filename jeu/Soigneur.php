@@ -28,8 +28,11 @@ class Soigneur extends Personnage{
         //le soin n'est pas fait, on renvoie false
         return false;
     }
-    
-    public function genererHTML():string {
+    /*
+     * On surcharge ici la méthode genererStats() afin de lui
+     * rajouter la stat Bandages.
+     */
+    public function genererStats():string {
         /*
          * Le parent:: permettra de faire appelle aux propriétés
          * et aux méthodes telles que définie dans la classe
@@ -39,6 +42,7 @@ class Soigneur extends Personnage{
          * de cette méthode, mais juste en lui rajoutant quelque
          * chose
          */
-        return parent::genererHTML();
+        return parent::genererStats()
+                . '<li>Bandages : ' . $this->bandages . '</li>';
     }
 }

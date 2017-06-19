@@ -60,11 +60,15 @@ class Personnage {
      */
     public function genererHTML():string {
         return '<ul>'
-            . '<li>Nom : ' . $this->nom . '</li>'
+            . $this->genererStats()
+            . '</ul>';
+    }
+    
+    protected function genererStats():string {
+        return '<li>Nom : ' . $this->nom . '</li>'
             . '<li>Vie : ' . $this->vie . '</li>'
             . '<li>Force : ' . $this->force . '</li>'
-            . '<li>Défense : ' . $this->defense . '</li>'
-            . '</ul>';
+            . '<li>Défense : ' . $this->defense . '</li>';
     }
 
 }
