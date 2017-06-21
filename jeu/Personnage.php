@@ -17,7 +17,7 @@ class Personnage {
     protected $defense;
     protected $nom;
     protected $force;
-            
+    
     function __construct(int $vie, 
             int $defense, 
             string $nom, 
@@ -63,7 +63,11 @@ class Personnage {
             . $this->genererStats()
             . '</ul>';
     }
-    
+    /**
+     * Méthode listant les stats d'un Personnage.
+     * @return string Renvoie la liste des stats sous
+     * forme de <li> html
+     */
     protected function genererStats():string {
         return '<li>Nom : ' . $this->nom . '</li>'
             . '<li>Vie : ' . $this->vie . '</li>'

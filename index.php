@@ -18,7 +18,7 @@ and open the template in the editor.
              * Cette instance possèdera toutes les propriétés
              * que nous avons défini dans notre classe
              */
-            $chien1 = new PetitChien();
+            $chien1 = new PetitChien("rex", "corgi", "24/05/2017", "marron");
             /*
              * Pour accéder aux propriétés de notre classe en
              * lecture (et en ecriture dans ce cas là), on
