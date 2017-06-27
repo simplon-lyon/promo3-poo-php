@@ -9,6 +9,7 @@ require_once './Employe.php';
 class Entreprise {
     private $employes;
     private $CA;
+    private $benefices = 0;
     
     function __construct(array $employes, int $CA) {
         $this->employes = $employes;
@@ -25,4 +26,18 @@ class Entreprise {
             }
         }
     }
+    /**
+     * Méthode qui permet de verser le salaire à tous les
+     * employés de l'entreprise et de calculer les 
+     * bénéfices de celle ci en conséquence.
+     */
+    public function verserSalaire() {
+        $totalSalaires = 0;
+        foreach($this->employes as $employe) {
+            $employe->toucherSalaire();
+            $totalSalaires += $employe->getSalaire();
+        }
+        $this->benefices = $this->CA - $totalSalaires;
+    }
+    
 }
