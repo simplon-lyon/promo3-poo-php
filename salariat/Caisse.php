@@ -21,6 +21,16 @@ class Caisse {
      * autres.
      */
     private static $depot = 0;
+    /* HS Non programmation : l'argent des cotisations
+     * sociale permet de financer le salaire des chomeurs
+     * actuels, des personnes malades, mais également 
+     * du personnel hospitalier via la Sécu ainsi que
+     * des retraités actuels. (actuel étant le mot clef,
+     * on ne cotise pas "pour soi, pour plus tard", on 
+     * cotise pour les autres, maintenant.
+     * 
+     */
+    
     /**
      * Une méthode qui prélève les cotisations sociales à
      * un salaire super-brut et les met dans sa caisse de
